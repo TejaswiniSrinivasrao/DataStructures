@@ -1,0 +1,37 @@
+Sorting :
+---------
+
+Sorting algorithms are a set of instructions that take an array or list as an input and arrange the items into a particular order.
+Sorts are most commonly in numerical or a form of alphabetical (or lexicographical) order, 
+and can be in ascending (A-Z, 0-9) or descending (Z-A, 9-0) order.
+
+These algorithms reduce the complexity of the problem.
+These algorithms have direct applications in searching algorithms, database algorithms, divide and conquer methods,
+data structure algorithms, and many more.
+
+
+When choosing a sorting algorithm, some questions have to be asked – 
+How big is the collection being sorted? 
+How much memory is available? 
+Does the collection need to grow?
+
+The answers to these questions may determine which algorithm is going to work best for each situation. 
+Some algorithms like merge sort may need a lot of space or memory to run, 
+while insertion sort is not always the fastest, but doesn't require many resources to run.
+
+You should determine what your requirements are, and consider the limitations of your system before deciding which sorting algorithm to use.
+
+Some Sorting algorithms:
+------------------------
+
+Selection sort
+Bubble sort
+Insertion sort
+Merge sort
+Quick sort
+Heap sort
+Counting sort
+Radix sort
+Bucket sort
+
+Link: https://www.freecodecamp.org/news/sorting-algorithms-explained-with-examples-in-python-java-and-c/
