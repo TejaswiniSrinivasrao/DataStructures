@@ -1,0 +1,98 @@
+What is bubblesort? explain it with example and its time complexity?
+
+Bubble sort is the one of the famous and easiest sorting technique that works by repeteadley swapping the elements in ascending order.
+This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+
+
+Input: arr[] = {5, 1, 4, 2, 8}
+
+First Pass:
+----------
+
+Bubble sort starts with very first two elements, comparing them to check which one is greater.
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1. 
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4 
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+
+
+Now, during second iteration it should look like this:
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ) 
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 ) 
+
+Now, the array is already sorted, but our algorithm does not know if it is completed.
+The algorithm needs one whole pass without any swap to know it is sorted.
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+
+
+Follow the below steps to solve the problem:
+
+Run a nested for loop to traverse the input array using two variables i and j, such that 0 ≤ i < n-1 and 0 ≤ j < n-i-1
+If arr[j] is greater than arr[j+1] then swap these adjacent elements, else move on
+Print the sorted array
+
+TimeComplexity:
+---------------
+
+Worst and Average Case Time Complexity: O(N2). The worst case occurs when an array is reverse sorted.
+Best Case Time Complexity: O(N). The best case occurs when an array is already sorted.
+
+Coding for BubbleSort:(javascript)
+----------------------------------
+
+<script>
+ // function to swap array elements by passing arr and indexes of array elements to swap
+ function swap(arr, xp, yp)
+{
+    var temp = arr[xp];
+    arr[xp] = arr[yp];
+    arr[yp] = temp;
+}
+ 
+// An optimized version of Bubble Sort
+function bubbleSort( arr, n)
+{
+var i, j;
+for (i = 0; i < n-1; i++)
+{
+    for (j = 0; j < n-i-1; j++)
+    {
+        if (arr[j] > arr[j+1])
+        {
+        swap(arr,j,j+1);
+         
+        }
+    }
+ 
+}
+}
+ 
+/* Function to print an array */
+function printArray(arr, size)
+{
+    var i;
+    for (i=0; i < size; i++)
+        document.write(arr[i]+ " ");
+    document.write("\n");
+}
+ 
+// Driver program to test above functions
+  var arr = [5, 1, 4, 2, 8];
+    var n = 5;
+    document.write("UnSorted array: \n");
+    printArray(arr, n);
+ 
+    bubbleSort(arr, n);
+    document.write("Sorted array: \n");
+    printArray(arr, n);
+ 
+ 
+</script>
+
+
+
